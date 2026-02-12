@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: unset;
+  color: unset;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+  background: radial-gradient(#eeeeee 45%, rgba(255, 188, 87, 0.3));
+  display: flex;
+}

@@ -1,0 +1,29 @@
+#projects {
+  width: 100%;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(4, 300px);
+  justify-content: center;
+  align-items: center;
+}
+
+.project {
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  grid-template-rows: 0.7fr 1fr;
+  height: 250px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  gap: 5px;
+  padding: 20px;
+}
+
+.project .description {
+  font-size: 14px;
+  overflow: scroll;
+}
+
+.project .name a {
+  color: rgb(230, 171, 82);
+}

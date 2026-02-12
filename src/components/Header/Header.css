@@ -1,0 +1,62 @@
+header * {
+  font-family: "Manrope";
+  font-weight: 600;
+  font-size: 24px;
+}
+
+header {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 0 50px;
+}
+
+#logo {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  h3 {
+    font-size: 40px !important;
+    letter-spacing: -2px;
+  }
+}
+
+.icon {
+  height: 75px;
+  width: 75px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 24px;
+}
+
+.link {
+  transition: 0.3s;
+}
+
+.link:hover {
+  color: rgba(255, 188, 87);
+}
+
+.active {
+  color: rgba(255, 188, 87);
+}
+
+#socials a {
+  transition: 0.3s;
+}
+
+#socials a:hover {
+  color: white;
+}
