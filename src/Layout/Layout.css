@@ -5,6 +5,7 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 25px;
+  gap: 20px;
 }
 
 main {
@@ -32,10 +33,4 @@ button {
 
 button.pill:hover {
   background-color: rgba(215, 160, 75, 0.8);
-}
-
-/* Heading */
-.heading h1 {
-  font-size: 65px;
-  font-weight: 400;
 }

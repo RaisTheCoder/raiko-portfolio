@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <section id="home">
       <aside className="heading">
-        <h1>Welcome to my page, this is RAI&lt;O</h1>
+        <h1 className="text-[40px] lg:text-[65px]">Welcome to my page, this is RAI&lt;O</h1>
         <p>
           I'm a person that's all about learning new stuff and being productive.
         </p>

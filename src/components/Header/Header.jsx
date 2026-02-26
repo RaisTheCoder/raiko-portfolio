@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Header.css";
 
@@ -9,8 +9,11 @@ import {
   faGithub,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
+import { faBars, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
+  const [theme, setTheme] = useState("light");
+
   const location = useLocation();
 
   const navLinks = [
@@ -19,13 +22,38 @@ const Header = () => {
     { to: "/about", label: "About" },
   ];
 
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    setTheme(savedTheme);
+  }, []);
+
+  if (theme == "dark") {
+    document.documentElement.classList.toggle("dark", true);
+  } else {
+    document.documentElement.classList.toggle("dark", false);
+  }
+
+  function changeTheme() {
+    if (theme == "dark") {
+      setTheme("light");
+      document.documentElement.classList.toggle("dark", false);
+      localStorage.setItem("theme", "light");
+    } else {
+      setTheme("dark");
+      document.documentElement.classList.toggle("dark", true);
+      localStorage.setItem("theme", "dark");
+    }
+  }
+
   return (
-    <header>
-      <Link id="logo" to={"/"}>
+    <header className="flex h-12.5 md:h-25 lg:px-12.5 gap-10 justify-between">
+      <Link id="logo" to={"/"} className="h-12.5 lg:h-18.75">
         <img src="/favicon.ico" alt="" className="icon" />
-        <h3>RAI&lt;O</h3>
+        <h3 className="text-[30px] lg:text-[40px] text-bold -tracking-[2px]">
+          RAI&lt;O
+        </h3>
       </Link>
-      <nav>
+      <nav className="hidden lg:flex">
         <ul>
           {navLinks.map((link) => (
             <li key={link.to}>
@@ -62,6 +90,21 @@ const Header = () => {
           </Link>
         </div>
       </nav>
+      <div className="buttons flex gap-2 ">
+        <button
+          className="rounded-[50%] h-12.5 w-12.5 bg-(--raiko-default) hover:text-white duration-200"
+          onClick={changeTheme}
+        >
+          {theme == "dark" ? (
+            <FontAwesomeIcon className="pointer-events-none" icon={faSun} />
+          ) : (
+            <FontAwesomeIcon className="pointer-events-none" icon={faMoon} />
+          )}
+        </button>
+        <button className="lg:hidden rounded-[50%] h-12.5 w-12.5 bg-(--raiko-default) hover:text-white duration-200">
+          <FontAwesomeIcon className="pointer-events-none" icon={faBars} />
+        </button>
+      </div>
     </header>
   );
 };

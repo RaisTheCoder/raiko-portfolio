@@ -1,38 +1,33 @@
 header * {
   font-family: "Manrope";
   font-weight: 600;
-  font-size: 24px;
 }
 
 header {
-  height: 100px;
   width: 100%;
-  display: flex;
   align-items: center;
-  gap: 30px;
-  padding: 0 50px;
 }
 
 #logo {
   display: flex;
   align-items: center;
   gap: 24px;
-  h3 {
-    font-size: 40px !important;
-    letter-spacing: -2px;
-  }
 }
 
 .icon {
-  height: 75px;
-  width: 75px;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
 }
 
 nav {
-  display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  flex: 1;
+}
+
+nav * {
+  font-size: 24px;
 }
 
 nav ul {

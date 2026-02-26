@@ -38,7 +38,10 @@ const Projects = () => {
       {projects.map((project) => {
         var fixedName = project.name.replaceAll("-", " ").replaceAll("_", " ");
         return (
-          <article key={project.id} className="project">
+          <article
+            key={project.id}
+            className="project border border-black dark:border-white duration-300"
+          >
             <strong className="name">
               <Link to={project.html_url} target="_blank">
                 {fixedName}

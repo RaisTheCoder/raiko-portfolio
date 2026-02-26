@@ -1,5 +1,5 @@
 #about {
-  width: 100%;
+  flex: 1;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -8,21 +8,30 @@
 }
 
 #about p {
-  width: 470px;
+  max-width: 470px;
 }
 
-#languages {
+#skill-sect {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  gap: 20px;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 350px));
+}
+
+.table {
   border: 1px solid black;
   border-radius: 5px;
   padding: 2px;
   width: 350px;
 }
 
-#languages thead td {
+.table thead td {
   font-weight: 600;
 }
 
-#languages td {
+.table td {
   border: 1px solid;
   border-radius: 3px;
   padding: 8px 10px;
