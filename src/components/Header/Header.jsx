@@ -123,7 +123,7 @@ const Header = () => {
             <FontAwesomeIcon className="pointer-events-none" icon={faBars} />
           </button>
           <ul
-            className={`border-gray-600 border absolute right-[5%] top-[120%] bg-white items-center flex flex-col text-black p-3 gap-2 rounded-4xl ${navV ? "pointer-events-auto" : "pointer-events-none"} ${navV ? "opacity-100" : "opacity-0"} duration-200 lg:hidden`}
+            className={`border-gray-600 border absolute right-[5%] top-[120%] bg-[#ffffffd7] dark:bg-[#ffffff59] items-center flex flex-col text-black p-3 gap-2 rounded-4xl ${navV ? "pointer-events-auto" : "pointer-events-none"} ${navV ? "opacity-100" : "opacity-0"} duration-200 lg:hidden`}
           >
             {navLinks.map((link) => (
               <li key={link.to}>
