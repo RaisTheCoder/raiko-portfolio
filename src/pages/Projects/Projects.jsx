@@ -5,7 +5,7 @@ import { Link } from "react-router";
 const Projects = () => {
   const [projects, setProjects] = React.useState([]);
 
-  const [count, setCount] = React.useState(0);
+  // const [count, setCount] = React.useState(0);
 
   async function retrieveProjects() {
     let res = await fetch("https://api.github.com/users/RaisTheCoder/repos");
@@ -40,7 +40,7 @@ const Projects = () => {
         return (
           <article
             key={project.id}
-            className="project border border-black dark:border-white duration-300"
+            className="project border border-black bg-[#ffffffd7] dark:bg-[#ffffff59] dark:text-black duration-300"
           >
             <strong className="name">
               <Link to={project.html_url} target="_blank">

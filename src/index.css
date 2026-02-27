@@ -3,7 +3,16 @@
 
 :root {
   --raiko-default: #ffbc57cc;
-  --raiko-gradient: radial-gradient(#eeeeee 45%, rgba(255, 188, 87, 0.3));
+  --raiko-gradient: radial-gradient(
+    farthest-corner at 100% 0%,
+    #eeeeee,
+    #ffbc57cc 70%
+  );
+  --raiko-grad-dark: radial-gradient(
+    farthest-corner at 100% 0%,
+    #eeeeee,
+    #18181b 90%
+  );
 }
 
 * {
@@ -16,4 +25,13 @@
   /* background: radial-gradient(#eeeeee 45%, rgba(255, 188, 87, 0.3)); */
   display: flex;
   transition: background 0.5s;
+}
+
+.bg {
+  background: #ffd392cc;
+  transition: 0.3s ease;
+}
+
+.bg.dark {
+  background: #18181b;
 }

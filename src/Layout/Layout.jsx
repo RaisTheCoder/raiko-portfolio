@@ -11,7 +11,7 @@ const Layout = () => {
     <div id="layout">
       <Header />
 
-      <main>
+      <main className="mt-17.5 md:mt-25">
         <Outlet />
       </main>
 
