@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./Projects.css";
 import { Link } from "react-router";
+import { Helmet } from "react-helmet";
 
 const Projects = () => {
   const [projects, setProjects] = React.useState([]);
@@ -34,28 +35,35 @@ const Projects = () => {
   }, []);
 
   return (
-    <section id="projects">
-      {projects.map((project) => {
-        var fixedName = project.name.replaceAll("-", " ").replaceAll("_", " ");
-        return (
-          <article
-            key={project.id}
-            className="project border border-black bg-[#ffffffd7] dark:bg-[#ffffff59] dark:text-black duration-300"
-          >
-            <strong className="name">
-              <Link to={project.html_url} target="_blank">
-                {fixedName}
-              </Link>
-            </strong>
-            <p className="description">{project.description}</p>
+    <>
+      <Helmet>
+        <title>Raiko - Projects</title>
+      </Helmet>
+      <section id="projects">
+        {projects.map((project) => {
+          var fixedName = project.name
+            .replaceAll("-", " ")
+            .replaceAll("_", " ");
+          return (
+            <article
+              key={project.id}
+              className="project border border-black bg-[#ffffffd7] dark:bg-[#ffffff59] dark:text-black duration-300"
+            >
+              <strong className="name">
+                <Link to={project.html_url} target="_blank">
+                  {fixedName}
+                </Link>
+              </strong>
+              <p className="description">{project.description}</p>
 
-            {/* <button onClick={() => setCount(count + 1)}>
+              {/* <button onClick={() => setCount(count + 1)}>
               Had to do this for homework {count}
             </button> */}
-          </article>
-        );
-      })}
-    </section>
+            </article>
+          );
+        })}
+      </section>
+    </>
   );
 };
 
